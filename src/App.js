@@ -18,6 +18,7 @@ export default App;
 
 
 
-// https://www.youtube.com/watch?v=jcOKU9f86XE   17:00
+// https://www.youtube.com/watch?v=jcOKU9f86XE   21:05
 
 // https://chatengine.io/projects/591ccf26-c647-4212-8fd3-42cb8860afbd
+// https://chatengine.io/docs
