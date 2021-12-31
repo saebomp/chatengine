@@ -9,8 +9,8 @@ const ChatFeed = (props) => {
 
     const renderMessage = () => {
         const keys = Object.keys(messages)
+        console.log(chats)
         // keys 는 message의 specific message임
-
         return keys.map((key,index) => {
             const message = messages[key];
             const lastMessageKey = index === 0 ? null : keys[index - 1]
