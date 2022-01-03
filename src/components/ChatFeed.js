@@ -7,9 +7,20 @@ const ChatFeed = (props) => {
     const chat = chats && chats[activeChat]
     //chats이 있을때 chats[activeChat] 찾음
 
+    const renderReadReceipts = (message, isMyMessage) => {
+        console.log('chatfeed', chat)
+        return chat.people.map((person, index) => person.last_read === message.id && (
+            <div
+                key={`read_${index}`}
+                className="read-receipt"
+                style={{float : isMyMessage ? 'right' : 'left',
+                backgroundImage:`url(${person?.person?.avatar})`
+            }} />
+        ))
+    }
+
     const renderMessage = () => {
         const keys = Object.keys(messages)
-        console.log(chats)
         // keys 는 message의 specific message임
         return keys.map((key,index) => {
             const message = messages[key];
@@ -28,7 +39,12 @@ const ChatFeed = (props) => {
                             <TheirMessage message={message} lastMessage={message[lastMessageKey]} />
                         }
                     </div>
-                    <div className="read-receipts" style={{marginRight: isMyMessage ? '18px' : '0px', marginLeft: isMyMessage ? '0px' : '68px'}}>read-receipts</div>
+                    <div 
+                        className="read-receipts" 
+                        style={{marginRight: isMyMessage ? '18px' : '0px', marginLeft: isMyMessage ? '0px' : '68px'}}
+                    >
+                        {renderReadReceipts(message, isMyMessage)}
+                    </div>
                 </div>
             )
         })
