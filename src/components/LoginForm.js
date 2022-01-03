@@ -4,6 +4,7 @@ import axios from 'axios';
 const LoginForm = () => {
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
+    const [error, setError] = useState('')
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -17,7 +18,7 @@ const LoginForm = () => {
             window.location.reload();
             //한번 로그인하면 다시 할필요 없음
         } catch(error) {
-
+            setError('Incorrect credentials!')
         }
     }
 
@@ -35,7 +36,7 @@ const LoginForm = () => {
                         required
                     />
                     <input 
-                        type="text" 
+                        type="password" 
                         value={password} 
                         onChange={(e) => setPassword(e.target.value)} 
                         className="input"
@@ -46,8 +47,8 @@ const LoginForm = () => {
                         <button type="submit" className="button">
                             <span>Start Chatting</span>
                         </button>
-
                     </div>
+                    <h2 className="error">{error}</h2>
                 </form>
             </div>
         </div>
