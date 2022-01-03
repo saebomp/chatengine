@@ -8,7 +8,7 @@ const ChatFeed = (props) => {
     //chats이 있을때 chats[activeChat] 찾음
 
     const renderReadReceipts = (message, isMyMessage) => {
-        console.log('chatfeed', chat)
+        // console.log('chatfeed', chat)
         return chat.people.map((person, index) => person.last_read === message.id && (
             <div
                 key={`read_${index}`}
