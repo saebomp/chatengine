@@ -4,8 +4,9 @@ import LoginForm from './components/LoginForm'
 import './App.css';
 
 const App = () => {
+
+
   const handleDelete = () => {
-    console.log('dd')
     localStorage.clear();
     window.location.reload(false);
   }

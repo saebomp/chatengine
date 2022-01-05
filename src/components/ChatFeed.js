@@ -1,8 +1,18 @@
+import {useEffect, useRef} from 'react';
 import MessageForm from "./MessageForm";
 import MyMessage from "./MyMessage";
 import TheirMessage from "./TheirMessage";
-
 const ChatFeed = (props) => {
+    const messagesEndRef = useRef(null)
+
+    const scrollToBottom = () => {
+        messagesEndRef.current?.scrollIntoView({ behavior: "smooth" })
+    }
+    
+    useEffect(() => {
+        scrollToBottom()
+    },);
+
     const {chats, activeChat, userName, messages } = props;
     const chat = chats && chats[activeChat]
     //chats이 있을때 chats[activeChat] 찾음
@@ -38,6 +48,7 @@ const ChatFeed = (props) => {
                             :
                             <TheirMessage message={message} lastMessage={message[lastMessageKey]} />
                         }
+                        <div ref={messagesEndRef} />
                     </div>
                     <div 
                         className="read-receipts" 
