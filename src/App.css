@@ -300,3 +300,15 @@
   background-color: #cabcdc;
   margin-bottom:10px;
 }
+.logout {
+  position:absolute;
+  bottom:20px;
+  left:20px;
+  z-index: 999;
+  border:1px solid #333;
+  border-radius: 9px;
+  line-height: 1;
+  padding:10px;
+  cursor:pointer;
+  background:#fff;
+}

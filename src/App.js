@@ -4,16 +4,25 @@ import LoginForm from './components/LoginForm'
 import './App.css';
 
 const App = () => {
-  if(!localStorage.getItem('username')) return <LoginForm />
+  const handleDelete = () => {
+    console.log('dd')
+    localStorage.clear();
+    window.location.reload(false);
+  }
 
+  if(!localStorage.getItem('username')) return <LoginForm />
+  
   return (
-    <ChatEngine
-      height='100vh'
-      projectID='591ccf26-c647-4212-8fd3-42cb8860afbd'
-      userName={localStorage.getItem('username')}
-      userSecret={localStorage.getItem('password')}
-      renderChatFeed={(chatAppProps) =><ChatFeed {...chatAppProps}/>}
-    />
+    <div>
+      <button className="logout" onClick={handleDelete}>logout</button>
+      <ChatEngine
+        height='100vh'
+        projectID='591ccf26-c647-4212-8fd3-42cb8860afbd'
+        userName={localStorage.getItem('username')}
+        userSecret={localStorage.getItem('password')}
+        renderChatFeed={(chatAppProps) =><ChatFeed {...chatAppProps}/>}
+      />
+    </div>
   );
 }
 
