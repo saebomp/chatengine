@@ -26,3 +26,5 @@ export default App;
 // https://chatengine.io/projects/591ccf26-c647-4212-8fd3-42cb8860afbd
 // https://chatengine.io/docs
 // https://rest.chatengine.io/#6775ec07-601e-4730-ba08-d87bc81d019a
+
+//버튼 누르면 로그아웃 되는거

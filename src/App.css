@@ -294,3 +294,9 @@
   text-align: center;
   margin-top: 20px;
 }
+
+.ce-chat-title-form input {
+  border:1px solid #cabcdc !important;
+  background-color: #cabcdc;
+  margin-bottom:10px;
+}

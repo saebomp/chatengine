@@ -58,7 +58,7 @@ const ChatFeed = (props) => {
                 <div className="chat-title">{chat?.title}</div>
                 {/* chat 이 있으면 title variable 에 access한다 */}
                 <div className="chat-subtitle">
-                    {chat.people.map((person) => `${person.person.username}`)}
+                    {chat.people.map((person) => { return <span style={{margin:'0px 5px'}}>{person.person.username}</span>})}
                 </div>
             </div>
             {renderMessage()}
